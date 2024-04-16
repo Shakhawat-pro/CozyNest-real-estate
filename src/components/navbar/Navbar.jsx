@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './navbar.css'
 
 const Navbar = () => {
@@ -20,7 +20,7 @@ const Navbar = () => {
                            {navLinks}
                         </ul>
                     </div>
-                    <img src="/public/favicon.png" alt="" />
+                    <img src="/favicon.png" alt="" />
                     <a className="btn btn-ghost text-2xl font-bold text-[#55d142]">CozyNest</a>
                 </div>
                 <div className="navbar-center hidden  lg:flex">
@@ -29,7 +29,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <Link to="/login"><button className="btn">Login</button></Link>
                 </div>
             </div>
         </div>
