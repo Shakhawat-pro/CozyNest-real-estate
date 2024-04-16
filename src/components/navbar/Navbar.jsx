@@ -4,7 +4,10 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 
 const Navbar = () => {
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
+    const handleLogOut = () => {
+        logOut()
+    }
     const navLinks = <>
         <li className="active:bg-white"><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/residents">Residents</NavLink></li>
@@ -40,7 +43,7 @@ const Navbar = () => {
                                         <img src={user.photoURL} alt="" />
                                     </div>
                                 </div>
-                                <Link to="/login"><button className="btn bg-[#23BE0A] text-white">Log Out</button></Link>
+                                <Link to="/"><button className="btn bg-[#23BE0A] text-white" onClick={handleLogOut}>Log Out</button></Link>
                             </div>
                         </>
                             : <Link to="/login"><button className="btn bg-[#23BE0A] text-white">Login</button></Link>

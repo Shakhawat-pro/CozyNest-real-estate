@@ -13,6 +13,7 @@ import Register from './components/register/Register';
 import Profile from './components/profile/Profile';
 import Contact from './components/contact/Contact';
 import AuthProviders from './providers/AuthProviders';
+import PrivateRoute from './components/privateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/profile',
-        element: <Profile></Profile>
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>
       },
       {
         path: '/contact',
@@ -53,4 +54,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <RouterProvider router={router} />
     </AuthProviders>
   </React.StrictMode>,
-)
+);

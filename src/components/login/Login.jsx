@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 const Login = () => {
-    const {signInUser, signInWithGoogle, signInWithGithub} = useContext(AuthContext);
+    const {signInUser, signInWithGoogle, signInWithGithub,} = useContext(AuthContext);
     const [loginError, setLoginError] =useState('')
     const [success, setSuccess] = useState('')
 
@@ -53,6 +53,7 @@ const Login = () => {
             setLoginError(error.message)
         })
     }
+
 
     return (
         <div className="">
