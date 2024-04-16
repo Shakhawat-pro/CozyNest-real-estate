@@ -1,10 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
-
+import { ToastContainer, toast } from 'react-toastify';
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 const Login = () => {
-    const {signInUser, signInWithGoogle} = useContext(AuthContext);
+    const {signInUser, signInWithGoogle, signInWithGithub} = useContext(AuthContext);
     const [loginError, setLoginError] =useState('')
     const [success, setSuccess] = useState('')
 
@@ -21,6 +21,7 @@ const Login = () => {
         signInUser(email, password)
         .then(result =>{
             console.log(result.user)
+            toast("Login Successfully")
             setSuccess('Login Successfully')
         })
         .catch(error =>{
@@ -31,7 +32,21 @@ const Login = () => {
         signInWithGoogle()
         .then(result => {
             console.log(result.user)
+            toast("Google Login Successfully")
             setSuccess('Login Successfully')
+
+        })
+        .catch(error => {
+            setLoginError(error.message)
+        })
+    }
+    const handleGithubSignIn = () =>{
+        signInWithGithub()
+        .then(result => {
+            console.log(result.user)
+            toast("Github Login Successfully")
+            setSuccess('Login Successfully')
+
 
         })
         .catch(error => {
@@ -42,6 +57,7 @@ const Login = () => {
     return (
         <div className="">
             <section className=" dark:bg-gray-900">
+            <ToastContainer />
                 <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                     <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
                         <img className="w-8 h-8 mr-2" src="/favicon.png" alt="logo" />
@@ -66,7 +82,7 @@ const Login = () => {
                             </form>
                                 <div className="flex justify-center space-x-8">
                                     <button onClick={handleGoogleSignIn}><img className="w-10" src="google.png" alt="" /></button>
-                                    <button><img className="w-10" src="github.png" alt="" /></button>
+                                    <button onClick={handleGithubSignIn}><img className="w-10" src="github.png" alt="" /></button>
                                 </div>
                                 {
                                     loginError && <p className="text-red-700">{loginError}</p>
