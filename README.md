@@ -1,19 +1,29 @@
-
 CozyNest
+
+
 Welcome to CozyNest, your go-to destination for exploring properties in the Residential category. Whether you're searching for a cozy home, an elegant apartment, or a serene vacation rental, RealEstateHub has got you covered.
 
 Live Site URL: https://cozynest-7b9c3.web.app/
 
 Frontend:
+
      1.React.js: A JavaScript library for building user interfaces. It's commonly used for its component-based architecture and reusability,
      2.React Router: For handling routing within the React application,
      3.HTML/CSS/JavaScript: For structuring, styling, and adding interactivity to the web pages,
      4.Tailwind CSS: A utility-first CSS framework used for styling components. It offers pre-designed components and utilities for rapid UI development,
      5.Swiper Slider: A popular JavaScript slider library for creating responsive and touch-enabled sliders/carousels,
+
+     
 Backend (Firebase):
+
+
     1.Firebase Authentication: For implementing user authentication with email/password, Google, GitHub, or other OAuth providers,
     2.Firebase Firestore: A NoSQL cloud database provided by Firebase. It's used for storing and retrieving data related to real estate properties, users, etc,
+
+    
 Other Tools:
+
+
     1.Visual Studio Code: is a popular code editor known for its versatility, extensibility, and strong support for various programming languages and frameworks,
     2.Git & GitHub: Version control system and code hosting platform for collaboration and managing project versions,
     3.npm (Node Package Manager): For managing project dependencies and installing packages,
@@ -28,6 +38,8 @@ npm Package Used:
    6. react-toastify
 
 Features and Characteristics:
+
+
     1.Responsive Design: RealEstateHub is optimized for seamless viewing across all devices, ensuring a smooth experience on mobile, tablet, and desktop,
     2.Unique Design: Our website boasts a distinctive design tailored to provide an engaging and user-friendly interface, setting it apart from the crowd,
     3.Active Navbar: The navbar features active routes, including Home, Update Profile, and user profile section with conditional rendering based on authentication status.
