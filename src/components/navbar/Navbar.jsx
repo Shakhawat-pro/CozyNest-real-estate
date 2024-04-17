@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import './navbar.css'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import 'animate.css';
 
@@ -10,6 +10,8 @@ const Navbar = () => {
     const handleLogOut = () => {
         logOut()
     }
+    const [showTooltip, setShowTooltip] = useState(false);
+    console.log(showTooltip);
     const navLinks = <>
         <li className="animate__animated animate__bounceInUp"><NavLink to="/">Home</NavLink></li>
         <li className="animate__animated animate__bounceInUp"><NavLink to="/residents">Residents</NavLink></li>
@@ -40,10 +42,17 @@ const Navbar = () => {
                     {
                         user ? <>
                             <div className="flex items-center space-x-6">
-                                <div className="avatar">
+                                <div className="avatar relative"
+                                onMouseEnter={() => setShowTooltip(true)}
+                                onMouseLeave={() => setShowTooltip(false)}>
                                     <div className="w-12 md:w-14 rounded-full ring ring-[#23BE0A] ring-offset-base-100 ring-offset-2">
                                         <img src={user.photoURL} alt="" />
                                     </div>
+                                    {showTooltip && (
+                                        <div className="tooltip absolute top-[-10px] right-20 bg-[#23BE0A] p-1 pl-2 rounded-md rounded-l-full text-white">
+                                            <span>{user.displayName}</span>
+                                        </div>
+                                    )}
                                 </div>
                                 <Link to="/"><button className="btn bg-[#23BE0A] text-white" onClick={handleLogOut}>Log Out</button></Link>
                             </div>
