@@ -21,17 +21,17 @@ const Cards = ({ house }) => {
         <div className="flex justify-center">
             <div className="max-w-sm w-full">
                 <div className="card h-full hover:cursor-pointer bg-base-100 shadow-xl p-6 border-2 border-[#23BE0A] rounded-xl">
-                    <figure>
+                    <figure data-aos="zoom-in" data-aos-duration="1000"> 
                         <img src={image} alt="Shoes" className="rounded-lg h-[280px] " />
                     </figure>
                     <div className="">
-                        <h1 className="card-title text-2xl font-bold my-3">{title}</h1>
-                        <p className='font-semibold flex gap-2 text-[#23BE0A] '>
+                        <h1 data-aos="fade-up" data-aos-delay="50" className="card-title text-2xl font-bold my-3">{title}</h1>
+                        <p data-aos="fade-up" data-aos-delay="60" className='font-semibold flex gap-2 text-[#23BE0A] '>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6Z" />
                             </svg>{type}</p>
-                        <div className="flex gap-4 mt-2">
+                        <div data-aos="fade-up" data-aos-delay="70" className="flex gap-4 mt-2">
                             <p className="flex gap-1"><span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -44,15 +44,15 @@ const Cards = ({ house }) => {
                                 </svg>
                             </span>{area}</p>
                         </div>
-                        <p className='my-3'>{description}</p>
-                        <div className='mt-2'>
+                        <p data-aos="fade-up" data-aos-delay="80" className='my-3'>{description}</p>
+                        <div data-aos="fade-up" data-aos-delay="90" className='mt-2'>
                             <p className='text-lg font-semibold'>For:<span className='text-[#23BE0A]'>{status}</span></p>
                             <p className='text-lg font-semibold text-[#23BE0A] flex items-center gap-1'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>{price} <span>{getPriceUnit(id)}</span></p>
                         </div>
                         <hr style={{ borderBottom: "1px dotted #888", height: "1px" }} className='mt-7 mb-3' />
-                        <div className=''>
+                        <div data-aos="fade-up" data-aos-delay="80" className=''>
                             <button onClick={handleClick} className='btn w-full bg-[#23BE0A] text-white'>View Property</button>
                         </div>
                     </div>

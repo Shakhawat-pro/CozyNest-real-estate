@@ -1,5 +1,5 @@
 .slide {
-    height: 500px;
+    height: 650px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,4 +25,10 @@
 
 .slide-4 {
     background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url(https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+}
+
+@media only screen and (max-width: 500px) {
+    .slide {
+        height: 450px;
+    }
 }

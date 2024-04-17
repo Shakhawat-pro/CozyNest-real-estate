@@ -7,7 +7,7 @@ import { Navigation, Autoplay, Pagination} from 'swiper/modules';
 
 const Slider = () => {
     return (
-        <div className="w-11/12 mx-auto rounded-3xl overflow-clip z-1 mt-16 lg:mt-10">
+        <div className="w-11/12 mx-auto rounded-3xl overflow-clip z-1 mt-16 lg:mt-10" data-aos="flip-up" data-aos-delay="150">
 
             <Swiper
                     style={{
@@ -16,7 +16,7 @@ const Slider = () => {
                     }}
              navigation={true} 
              autoplay={{
-                delay: 2000,
+                delay: 3000,
                 disableOnInteraction: false,
               }}
               pagination={{
@@ -26,8 +26,8 @@ const Slider = () => {
             loop={true}
             >
                 <SwiperSlide>
-                    <div className="slide slide-1  flex flex-col ">
-                        <h1 className='text-[#23BE0A] text-2xl lg:text-7xl font-bold mb-6'>Urban Oasis</h1>
+                    <div className="slide slide-1  flex flex-col" data-aos="fade-up" >
+                        <h1 className='text-[#23BE0A] text-2xl lg:text-7xl font-bold mb-6 ' data-aos="zoom-in-down" >Urban Oasis</h1>
                         <p className=" w-10/12 text-sm lg:text-md text-white max-sm:hidden">Immerse yourself in the vibrant pulse of city life with our urban oasis collection. Discover stylish apartments, trendy lofts, and chic condominiums nestled in the heart of bustling metropolises. Experience the convenience of city living without compromising on comfort and style.</p>
                         <p className="w-9/12 text-sm lg:text-md text-white md:hidden">Experience vibrant city life with stylish apartments and trendy lofts in our Urban Oasis collection.</p>
                     </div>

@@ -13,7 +13,7 @@ const Profile = () => {
         updateUserDisplayName(newDisplayName)
     }
     return (
-        <div>
+        <div data-aos="fade-up" data-aos-delay="60">
             <section className="bg-gray-50 dark:bg-gray-900 pt-16">
                 <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                     <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
@@ -22,7 +22,7 @@ const Profile = () => {
                             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                                 <div className="">
                                     <h1 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Profile Picture</h1>
-                                    <img className="mx-auto rounded-lg max-h-[100px]" src={user.photoURL} alt="" />
+                                    <img data-aos="zoom-out" data-aos-delay="60" className="mx-auto rounded-lg max-h-[100px]" src={user.photoURL} alt="" />
                                 </div>
                                 <div>
                                     <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Name</label>

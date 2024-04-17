@@ -67,14 +67,14 @@ const Resident = () => {
     }
 
     return (
-        <div>
+        <div >
             {/* filter by category */}
             <div className="text-center mt-16">
-                <h2 className="text-4xl font-bold text-[#23BE0A]">Explore Real Estate Listings</h2>
-                <p className="mt-4">Discover a wide range of real estate options tailored to your preferences. Filter by property type, sort by price or area, and find your perfect home or investment opportunity with ease.</p>
+                <h2 data-aos="fade-down" data-aos-delay="50" className="text-4xl font-bold text-[#23BE0A]">Explore Real Estate Listings</h2>
+                <p data-aos="fade-up" data-aos-delay="50" className="mt-4">Discover a wide range of real estate options tailored to your preferences. Filter by property type, sort by price or area, and find your perfect home or investment opportunity with ease.</p>
             </div>
-            <div className="flex max-md:flex-col  w-11/12 mx-auto border-2 border-[#23BE0A] rounded-2xl bg-gray-100 justify-center items-center gap-20 mt-5 p-10">
-                <div className="text-center">
+            <div data-aos="zoom-out" data-aos-delay="50" className="flex max-md:flex-col  w-11/12 mx-auto border-2 border-[#23BE0A] rounded-2xl bg-gray-100 justify-center items-center gap-20 my-16 p-10">
+                <div data-aos="fade-down" data-aos-delay="50" className="text-center">
                     <details className="dropdown w-64">
                         <summary className="m-1 btn bg-[#23BE0A] text-white w-full">Category
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -91,7 +91,7 @@ const Resident = () => {
                     </details>
                 </div>
                 {/* short by Type */}
-                <div className="text-center ">
+                <div data-aos="fade-down" data-aos-delay="100" className="text-center ">
                     <details className="dropdown w-64 ">
                         <summary className="m-1 btn bg-[#23BE0A] text-white w-full">Sort By
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -105,7 +105,7 @@ const Resident = () => {
                     </details>
                 </div>
                 {/* filter by status */}
-                <div className="text-center ">
+                <div data-aos="fade-down" data-aos-delay="150" className="text-center ">
                     <details className="dropdown w-64 ">
                         <summary className="m-1 btn bg-[#23BE0A] text-white w-full">Sale / Rent
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
