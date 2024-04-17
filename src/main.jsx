@@ -15,11 +15,13 @@ import Contact from './components/contact/Contact';
 import AuthProviders from './providers/AuthProviders';
 import PrivateRoute from './components/privateRoute/PrivateRoute';
 import SoloCard from './components/soloCard/SoloCard';
+import Error from './components/error/Error';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Error></Error>,
     children:[
       {
         path:'/',
