@@ -1,9 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import Cards from "./Cards";
 import Slider from "./Slider";
+import { useEffect } from "react";
 
 const Home = () => {
     const houses = useLoaderData()
+    useEffect(()=>{
+        document.title = 'CozyNest'
+    })
     return (
         <div>
             <Slider></Slider>

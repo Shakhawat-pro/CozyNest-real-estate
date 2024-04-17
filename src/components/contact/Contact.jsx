@@ -1,5 +1,9 @@
+import { useEffect } from "react";
 
 const Contact = () => {
+    useEffect(()=>{
+        document.title = 'Contact Us'
+    })
     return (
         <div>
             <section className="bg-gray-50 pt-16 ">

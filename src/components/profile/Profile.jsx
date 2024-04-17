@@ -1,8 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 
 const Profile = () => {
     const { user, updateUserDisplayName,} = useContext(AuthContext)
+    useEffect(()=>{
+        document.title = 'User Profile'
+    })
     const handleSubmit = e => {
         e.preventDefault()
         const newDisplayName = e.target.updateName.value
@@ -19,7 +22,7 @@ const Profile = () => {
                             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                                 <div className="">
                                     <h1 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Profile Picture</h1>
-                                    <img className="mx-auto rounded-lg" src={user.photoURL} alt="" />
+                                    <img className="mx-auto rounded-lg max-h-[100px]" src={user.photoURL} alt="" />
                                 </div>
                                 <div>
                                     <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Name</label>

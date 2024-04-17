@@ -2,6 +2,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import "./map.css"
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css"
+import { useEffect } from "react";
 
 
 const SoloCard = () => {
@@ -11,7 +12,9 @@ const SoloCard = () => {
     const house = houses.find(house => house.id === idInt)
     
     const { title, type, image, description, position, category, facilities, price, area, location, status } = house
-    console.log(position)
+    useEffect(()=>{
+        document.title = `${title}`
+    })
 
     return (
         <div className="flex flex-col-reverse ">

@@ -1,6 +1,6 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import { updateProfile } from "firebase/auth";
 import { FaRegEye, FaRegEyeSlash  } from "react-icons/fa";
@@ -12,6 +12,9 @@ const Register = () => {
     const [success, setSuccess] = useState('')
     const { createUser } = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false)
+    useEffect(()=>{
+        document.title = 'Register'
+    })
 
 
     const handleRegister = e => {

@@ -6,6 +6,9 @@ const Resident = () => {
     const [houses, setHouses] = useState([])
     const [filterHouses, setFilterHouses] = useState([])
     const data = useLoaderData()
+    useEffect(()=>{
+        document.title = 'Residents'
+    })
 
     useEffect(() => {
         setHouses(data);

@@ -31,7 +31,9 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <img className="animate__animated animate__bounceInUp" src="/favicon.png" alt="" />
-                    <a className="animate__animated animate__bounceInUp animated-delay-2s  btn btn-ghost text-2xl font-bold text-[#55d142]">CozyNest</a>
+                    <Link to='/'>
+                        <p className="animate__animated animate__bounceInUp animated-delay-2s  btn btn-ghost text-2xl font-bold text-[#55d142]">CozyNest</p>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden  lg:flex">
                     <ul className="menu-horizontal bg-white px-1 space-x-5">
@@ -43,13 +45,13 @@ const Navbar = () => {
                         user ? <>
                             <div className="flex items-center space-x-6">
                                 <div className="avatar relative"
-                                onMouseEnter={() => setShowTooltip(true)}
-                                onMouseLeave={() => setShowTooltip(false)}>
+                                    onMouseEnter={() => setShowTooltip(true)}
+                                    onMouseLeave={() => setShowTooltip(false)}>
                                     <div className="w-12 md:w-14 rounded-full ring ring-[#23BE0A] ring-offset-base-100 ring-offset-2">
                                         <img src={user.photoURL} alt="" />
                                     </div>
                                     {showTooltip && (
-                                        <div className="tooltip absolute top-[-10px] right-20 bg-[#23BE0A] p-1 pl-2 rounded-md rounded-l-full text-white">
+                                        <div className="tooltip absolute top-[-10px] right-16 bg-[#23BE0A] p-1 pl-2 rounded-md rounded-l-full text-white">
                                             <span>{user.displayName}</span>
                                         </div>
                                     )}

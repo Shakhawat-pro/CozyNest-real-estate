@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { ToastContainer, toast } from 'react-toastify';
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 import { FaRegEye, FaRegEyeSlash  } from "react-icons/fa";
@@ -10,6 +10,9 @@ const Login = () => {
     const [loginError, setLoginError] =useState('')
     const [success, setSuccess] = useState('')
     const [showPassword, setShowPassword] = useState(false)
+    useEffect(()=>{
+        document.title = 'Login'
+    })
 
     const handleLogin = e =>{
         e.preventDefault()
@@ -56,6 +59,7 @@ const Login = () => {
             setLoginError(error.message)
         })
     }
+    
 
 
     return (

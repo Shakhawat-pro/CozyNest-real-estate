@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 const Cards = ({ house }) => {
     const { title, type, id, image, description, price, area, location, status } = house
     const navigate = useNavigate()
-
     const handleClick = () => {
         navigate(`/soloHouse/${id}`)
     }
