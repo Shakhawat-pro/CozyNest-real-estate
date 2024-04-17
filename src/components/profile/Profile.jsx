@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 
 const Profile = () => {
-    const { user, updateUserDisplayName, photoURL } = useContext(AuthContext)
+    const { user, updateUserDisplayName,} = useContext(AuthContext)
     const handleSubmit = e => {
         e.preventDefault()
         const newDisplayName = e.target.updateName.value
