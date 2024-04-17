@@ -14,6 +14,7 @@ import Profile from './components/profile/Profile';
 import Contact from './components/contact/Contact';
 import AuthProviders from './providers/AuthProviders';
 import PrivateRoute from './components/privateRoute/PrivateRoute';
+import SoloCard from './components/soloCard/SoloCard';
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,8 @@ const router = createBrowserRouter([
       },
       {
         path:'/residents',
-        element:<Resident></Resident>
+        element:<Resident></Resident>,
+        loader: () => fetch('/house.json')
       },
       {
         path: '/profile',
@@ -44,6 +46,12 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact></Contact>
+      },
+      {
+        path: '/soloHouse/:id',
+        element: <PrivateRoute><SoloCard></SoloCard></PrivateRoute>,
+        loader: () => fetch('/house.json')
+
       }
     ]
   },

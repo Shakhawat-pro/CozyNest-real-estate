@@ -1,6 +1,23 @@
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 const Cards = ({ house }) => {
-    const { title, type, image, description, price, area, location, status } = house
+    const { title, type, id, image, description, price, area, location, status } = house
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        navigate(`/soloHouse/${id}`)
+    }
+
+    const getPriceUnit = (houseId) => {
+        if (houseId >= 19 && houseId <= 24) {
+            return "/month";
+        } else if (houseId >= 31 && houseId <= 36) {
+            return "/night";
+        } else {
+            return "";
+        }
+    };
+
     return (
         <div className="flex justify-center">
             <div className="max-w-sm w-full">
@@ -24,18 +41,20 @@ const Cards = ({ house }) => {
                             </span>{location}</p>
                             <p className="flex gap-1"><span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                                 </svg>
                             </span>{area}</p>
                         </div>
                         <p className='my-3'>{description}</p>
                         <div className='mt-2'>
-                            <p className='text-lg font-semibold'>For: <span className='text-[#23BE0A]'>{status}</span></p>
-                            <p className='text-lg font-semibold text-[#23BE0A]'>{price}</p>
+                            <p className='text-lg font-semibold'>For:<span className='text-[#23BE0A]'>{status}</span></p>
+                            <p className='text-lg font-semibold text-[#23BE0A] flex items-center gap-1'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>{price} <span>{getPriceUnit(id)}</span></p>
                         </div>
                         <hr style={{ borderBottom: "1px dotted #888", height: "1px" }} className='mt-7 mb-3' />
                         <div className=''>
-                            <button className='btn w-full bg-[#23BE0A] text-white'>View Property</button>
+                            <button onClick={handleClick} className='btn w-full bg-[#23BE0A] text-white'>View Property</button>
                         </div>
                     </div>
                 </div>
@@ -45,6 +64,6 @@ const Cards = ({ house }) => {
 };
 
 export default Cards;
-Cards.propTypes ={
-    house: PropTypes.node
+Cards.propTypes = {
+    house: PropTypes.object
 }
