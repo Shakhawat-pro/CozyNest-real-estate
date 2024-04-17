@@ -16,7 +16,7 @@ const Slider = () => {
                     }}
              navigation={true} 
              autoplay={{
-                delay: 3000,
+                delay: 1500,
                 disableOnInteraction: false,
               }}
               pagination={{
