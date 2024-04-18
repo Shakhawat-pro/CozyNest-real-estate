@@ -1,7 +1,7 @@
 
 const Booking = () => {
     return (
-        <div>
+        <div className="min-h-[500px]">
             
         </div>
     );

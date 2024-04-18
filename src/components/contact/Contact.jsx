@@ -5,7 +5,7 @@ const Contact = () => {
         document.title = 'Contact Us'
     })
     return (
-        <div data-aos="fade-up" data-aos-delay="60">
+        <div className="min-h-[500px]" data-aos="fade-up" data-aos-delay="60">
             <section className="bg-gray-50 pt-16 ">
                 <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md border-2 bg-white border-[#23BE0A] rounded-xl">
                     <h2 data-aos="fade-left" data-aos-delay="50" className="mb-4 text-4xl tracking-tight font-extrabold text-center text-[#23BE0A]   ">Contact Us</h2>

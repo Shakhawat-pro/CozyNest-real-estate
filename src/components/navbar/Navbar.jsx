@@ -44,11 +44,11 @@ const Navbar = () => {
                 <div className="navbar-end animate__animated animate__bounceInDown">
                     {
                         user ? <>
-                            <div className="flex items-center space-x-6">
+                            <div className="flex items-center space-x-2 md:space-x-6">
                                 <div className="avatar relative"
                                     onMouseEnter={() => setShowTooltip(true)}
                                     onMouseLeave={() => setShowTooltip(false)}>
-                                    <div data-aos="zoom-out" data-aos-delay="500" className="w-12 md:w-14 rounded-full ring ring-[#23BE0A] ring-offset-base-100 ring-offset-2">
+                                    <div data-aos="zoom-out" data-aos-delay="500" className="w-10 md:w-14 rounded-full ring ring-[#23BE0A] ring-offset-base-100 ring-offset-2">
                                         <img src={user.photoURL} alt="" />
                                     </div>
                                     {showTooltip && (
@@ -57,7 +57,7 @@ const Navbar = () => {
                                         </div>
                                     )}
                                 </div>
-                                <Link to="/"><button className="btn bg-[#23BE0A] text-white" onClick={handleLogOut}>Log Out</button></Link>
+                                <Link to="/"><button className="btn bg-[#23BE0A] text-white max-sm:w-16" onClick={handleLogOut}>Log Out</button></Link>
                             </div>
                         </>
                             : <Link to="/login"><button className="btn bg-[#23BE0A] text-white">Login</button></Link>
