@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { eraseHome, getHome } from "../../../utiity/storage";
 import { useLoaderData } from "react-router-dom";
 import Cards from "../home/Cards";
+import { ToastContainer } from 'react-toastify';
+
 
 
 const Booking = () => {
@@ -12,7 +14,7 @@ const Booking = () => {
         const savedHouse = getHome();
         setBooked(savedHouse)
     }, [])
-    const handleRemove = () =>{
+    const handleRemove = () => {
         eraseHome()
         setBooked([])
     }
@@ -26,6 +28,8 @@ const Booking = () => {
 
     return (
         <div className="min-h-[500px] mt-16">
+            <ToastContainer />
+
             <div className="text-center ">
                 <h2 data-aos="fade-down" data-aos-delay="50" className="text-4xl font-bold text-[#23BE0A]">Your Booking Details</h2>
                 <p data-aos="fade-up" data-aos-delay="50" className="mt-4 w-11/12 mx-auto">Discover all you need to know about your scheduled property visit. Explore viewing details, location, and any special instructions to ensure a smooth and informative experience. Prepare to find your dream property hassle-free.</p>
