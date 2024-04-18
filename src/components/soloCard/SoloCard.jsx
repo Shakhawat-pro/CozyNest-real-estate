@@ -3,6 +3,7 @@ import "./map.css"
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css"
 import { useEffect } from "react";
+import { Icon } from "leaflet";
 
 
 const SoloCard = () => {
@@ -15,7 +16,10 @@ const SoloCard = () => {
     useEffect(()=>{
         document.title = `${title}`
     })
-
+    const customIcon = new Icon({
+        iconUrl: "/location.png",
+        iconSize: [38, 38]
+    })
     return (
         <div className="flex flex-col-reverse ">
             <div className="card lg:card-side bg-base-100 shadow-xl w-11/12 mx-auto my-16 ">
@@ -51,7 +55,7 @@ const SoloCard = () => {
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
                     ></TileLayer>
-                    <Marker position={position}>
+                    <Marker position={position} icon={customIcon}>
                         <Popup>
                             A pretty CSS3 popup. <br /> Easily customizable.
                         </Popup>

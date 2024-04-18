@@ -16,6 +16,7 @@ import AuthProviders from './providers/AuthProviders';
 import PrivateRoute from './components/privateRoute/PrivateRoute';
 import SoloCard from './components/soloCard/SoloCard';
 import Error from './components/error/Error';
+import Booking from './components/booking/Booking';
 
 const router = createBrowserRouter([
   {
@@ -53,7 +54,10 @@ const router = createBrowserRouter([
         path: '/soloHouse/:id',
         element: <PrivateRoute><SoloCard></SoloCard></PrivateRoute>,
         loader: () => fetch('/house.json')
-
+      },
+      {
+        path: '/booking',
+        element: <Booking></Booking>
       }
     ]
   },
