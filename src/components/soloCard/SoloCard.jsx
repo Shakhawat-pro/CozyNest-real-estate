@@ -22,11 +22,13 @@ const SoloCard = () => {
     const handleBooking = () => {
         saveHome(idInt)
     }
-
-
-
+    
+    
+    
     useEffect(() => {
         document.title = `${title}`
+        window.scrollTo(0, 0);
+
     })
     const customIcon = new Icon({
         iconUrl: "/location.png",
@@ -81,7 +83,7 @@ const SoloCard = () => {
 
             {/* map */}
 
-            <div className="leaflet-container w-11/12 mx-auto rounded-3xl  ">
+            <div id="top" className="leaflet-container w-11/12 mx-auto rounded-3xl  ">
                 <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
