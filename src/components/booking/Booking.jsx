@@ -28,9 +28,8 @@ const Booking = () => {
 
     return (
         <div className="min-h-[500px] mt-16">
-            <ToastContainer />
-
             <div className="text-center ">
+            <ToastContainer />
                 <h2 data-aos="fade-down" data-aos-delay="50" className="text-4xl font-bold text-[#23BE0A]">Your Booking Details</h2>
                 <p data-aos="fade-up" data-aos-delay="50" className="mt-4 w-11/12 mx-auto">Discover all you need to know about your scheduled property visit. Explore viewing details, location, and any special instructions to ensure a smooth and informative experience. Prepare to find your dream property hassle-free.</p>
                 <button onClick={handleRemove} className='btn w-[200px] bg-[#23BE0A] text-white mt-6'>Clear All Booking</button>
