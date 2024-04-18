@@ -1,10 +1,13 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import "./map.css"
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css"
 import { useEffect } from "react";
 import { Icon } from "leaflet";
 import { FaDollarSign } from "react-icons/fa";
+import { saveHome } from "../../../utiity/storage";
+import { ToastContainer } from 'react-toastify';
+
 
 
 const SoloCard = () => {
@@ -14,6 +17,14 @@ const SoloCard = () => {
     const house = houses.find(house => house.id === idInt)
 
     const { title, type, image, description, position, category, facilities, price, area, location, status } = house
+
+
+    const handleBooking = () => {
+        saveHome(idInt)
+    }
+
+
+
     useEffect(() => {
         document.title = `${title}`
     })
@@ -32,6 +43,8 @@ const SoloCard = () => {
     };
     return (
         <div className="flex flex-col-reverse min-h-[500px] mt-16 ">
+            <ToastContainer />
+
             <div className="card lg:card-side bg-base-100 shadow-xl w-11/12 mx-auto my-16 ">
                 <figure className="w-1/2 max-h-[500px] rounded-xl cover  mx-auto" ><img className="object-contain w-full h-full" src={image} alt="Album" /></figure>
                 <div className="card-body">
@@ -47,7 +60,10 @@ const SoloCard = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                             </svg>   {location}</h1>
                         </div>
-                        <button className='btn max-sm:mt-6  bg-[#23BE0A] text-white'>Contact Us</button>
+                        <Link to="/contact">
+
+                            <button className='btn max-sm:mt-6  bg-[#23BE0A] text-white'>Contact Us</button>
+                        </Link>
                     </div>
 
                     <div className="divider divider-accent"></div>
@@ -58,7 +74,7 @@ const SoloCard = () => {
                     <p><span className="font-bold">Area:</span> {area}</p>
                     <p><span className="font-bold">Facilities:</span> {facilities.join(', ')}</p>
                     <div className="card-actions justify-end">
-                        <button className='btn w-full bg-[#23BE0A] text-white'>Book a visit.</button>
+                        <button onClick={handleBooking} className='btn w-full bg-[#23BE0A] text-white'>Book a visit.</button>
                     </div>
                 </div>
             </div>

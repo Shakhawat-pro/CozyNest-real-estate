@@ -57,7 +57,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/booking',
-        element: <Booking></Booking>
+        element: <PrivateRoute><Booking></Booking></PrivateRoute>,
+        loader: () => fetch('/house.json')
+
       }
     ]
   },

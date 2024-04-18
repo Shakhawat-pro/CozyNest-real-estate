@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { FaDollarSign } from "react-icons/fa";
 
+
 const Cards = ({ house }) => {
     const { title, type, id, image, description, price, area, location, status } = house
     const navigate = useNavigate()
@@ -49,8 +50,7 @@ const Cards = ({ house }) => {
                         <p data-aos="fade-up" data-aos-delay="80" className='my-3'>{description}</p>
                         <div data-aos="fade-up" data-aos-delay="90" className='mt-2'>
                             <p className='text-lg font-semibold'>For:<span className='text-[#23BE0A]'> {status}</span></p>
-                            <p className='text-lg font-semibold text-[#23BE0A] flex items-center gap-1'><FaDollarSign />
-                                {price} <span>{getPriceUnit(id)}</span></p>
+                            <p className='text-lg font-semibold text-[#23BE0A] flex items-center gap-1'><FaDollarSign />{price} <span>{getPriceUnit(id)}</span></p>
                         </div>
                         <hr style={{ borderBottom: "1px dotted #888", height: "1px" }} className='mt-7 mb-3' />
                         <div data-aos="fade-up" data-aos-delay="80" className=''>

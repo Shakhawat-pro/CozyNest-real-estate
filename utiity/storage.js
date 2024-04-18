@@ -17,7 +17,12 @@ const saveHome = id => {
     }
     savedHouse.push(id)
     localStorage.setItem('house', JSON.stringify(savedHouse))
-    toast.warn("Booking Successful.")
+    toast.success("Booking Successful.")
 }
 
-export {getHome, saveHome}
+const eraseHome = () => {
+    localStorage.removeItem('house');
+    toast.info("Booked houses Removed.");
+}
+
+export {getHome, saveHome, eraseHome}
