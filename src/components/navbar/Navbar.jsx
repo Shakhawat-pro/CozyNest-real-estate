@@ -16,7 +16,6 @@ const Navbar = () => {
         <li data-aos="fade-up" data-aos-delay="50" className=""><NavLink to="/">Home</NavLink></li>
         <li data-aos="fade-up" data-aos-delay="100" className=""><NavLink to="/residents">Residents</NavLink></li>
         <li data-aos="fade-up" data-aos-delay="100" className=""><NavLink to="/booking">Booking</NavLink></li>
-        <li data-aos="fade-up" data-aos-delay="150" className=""><NavLink to="/contact">Contact</NavLink></li>
         <li data-aos="fade-up" data-aos-delay="200" className=""><NavLink to="/profile">Profile</NavLink></li>
     </>
     return (
@@ -27,7 +26,7 @@ const Navbar = () => {
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </div>
-                        <ul tabIndex={0} className="menu-sm dropdown-content flex items-center mt-3 z-10 p-4 shadow bg-white rounded-box w-[350px]">
+                        <ul tabIndex={0} className="menu-sm dropdown-content flex items-center mt-3 z-10 p-4 shadow bg-white rounded-box w-[330px]">
                             {navLinks}
                         </ul>
                     </div>
